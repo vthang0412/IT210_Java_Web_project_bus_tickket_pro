@@ -1,0 +1,25 @@
+<!doctype html>
+<div th:replace="layout :: layout(~{::content})" th:with="pageTitle='Xác nhận đặt vé'">
+  <div class="card mx-auto" style="max-width:800px;">
+    <div class="card-body">
+      <h5 class="card-title">Xác nhận đặt vé</h5>
+      <div th:if="${ticket != null}">
+        <p><strong>Mã vé:</strong> <span th:text="${ticket.ticketCode}"></span></p>
+        <p><strong>Họ tên:</strong> <span th:text="${ticket.customerName}"></span></p>
+        <p><strong>SĐT:</strong> <span th:text="${ticket.customerPhone}"></span></p>
+        <p><strong>Chuyến:</strong> <span th:text="${ticket.trip.route.from.name + ' → ' + ticket.trip.route.to.name}"></span></p>
+        <p><strong>Xe:</strong> <span th:text="${ticket.trip.bus.licensePlate}"></span></p>
+        <p><strong>Ghế:</strong> <span th:text="${ticket.seat.seatNumber}"></span></p>
+        <p><strong>Giá:</strong> <span th:text="${ticket.totalPrice}"></span></p>
+
+        <form th:action="@{/booking/complete}" method="post">
+          <button class="btn btn-success">Hoàn tất (gửi thông tin)</button>
+        </form>
+
+        <form th:action="@{/booking/cancel-session}" method="post" class="mt-2">
+          <button class="btn btn-danger">Hủy đặt chỗ</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
