@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Thông tin admin</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/profile.css}">
+    <link rel="stylesheet"
+          th:href="@{/css/header.css}">
+</head>
+<body>
+
+
+<div class="container">
+
+    <div class="profile-box">
+
+        <h1>Thông tin admin</h1>
+
+        <div class="success"
+             th:if="${param.success}">
+
+            Cập nhật thông tin thành công
+
+        </div>
+
+        <div class="error-box"
+             th:if="${error}"
+             th:text="${error}">
+        </div>
+
+        <form th:action="@{/admin/profile/update}"
+              th:object="${profile}"
+              method="post">
+
+            <div class="form-group">
+
+                <label>Họ và tên</label>
+
+                <input type="text"
+                       th:field="*{fullName}"
+                       placeholder="Nhập họ tên">
+
+                <p class="error"
+                   th:if="${#fields.hasErrors('fullName')}"
+                   th:errors="*{fullName}">
+                </p>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Số điện thoại</label>
+
+                <input type="text"
+                       th:field="*{phone}"
+                       placeholder="Nhập số điện thoại">
+
+                <p class="error"
+                   th:if="${#fields.hasErrors('phone')}"
+                   th:errors="*{phone}">
+                </p>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input type="email"
+                       th:field="*{email}"
+                       placeholder="Nhập email">
+
+                <p class="error"
+                   th:if="${#fields.hasErrors('email')}"
+                   th:errors="*{email}">
+                </p>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Địa chỉ</label>
+
+                <textarea th:field="*{address}"
+                          placeholder="Nhập địa chỉ">
+                </textarea>
+
+            </div>
+
+            <div class="btn-group">
+
+                <button type="submit"
+                        class="btn-save">
+
+                    Cập nhật
+
+                </button>
+
+                <a th:href="@{/admin/home}"
+                   class="btn-back">
+
+                    Quay lại
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

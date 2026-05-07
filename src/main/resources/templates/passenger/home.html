@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Passenger Home</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/passenger/home.css}">
+
+    <!-- CSS header -->
+    <link rel="stylesheet"
+          th:href="@{/css/header.css}">
+</head>
+<body>
+
+<!-- HEADER -->
+<div th:replace="~{fragments/header :: passengerHeader}"></div>
+
+<div class="container">
+
+    <div class="home-box">
+
+        <h1>Passenger Home</h1>
+
+        <p class="welcome">
+            Chào mừng bạn đến với hệ thống Bus Ticket Pro
+        </p>
+
+        <div class="menu">
+
+            <a th:href="@{/passenger/profile}"
+               class="card">
+
+                <h3>Thông tin cá nhân</h3>
+
+                <p>
+                    Xem và cập nhật hồ sơ cá nhân
+                </p>
+
+            </a>
+
+            <a th:href="@{/passenger/tickets}"
+               class="card">
+
+                <h3>Vé của tôi</h3>
+
+                <p>
+                    Tra cứu danh sách vé đã đặt
+                </p>
+
+            </a>
+
+            <a th:href="@{/passenger/search}"
+               class="card">
+
+                <h3>Tìm chuyến xe</h3>
+
+                <p>
+                    Tìm kiếm chuyến xe phù hợp
+                </p>
+
+            </a>
+
+        </div>
+
+        <div class="logout">
+
+            <form th:action="@{/logout}"
+                  method="post">
+
+                <button type="submit"
+                        class="btn-logout">
+
+                    Đăng xuất
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

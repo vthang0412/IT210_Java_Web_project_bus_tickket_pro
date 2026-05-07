@@ -1,0 +1,8 @@
+package com.bus_ticket_pro.repository;
+
+import com.bus_ticket_pro.entity.Bus;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BusRepository extends JpaRepository<Bus, Long> {
+    boolean existsByLicensePlate(String licensePlate);
+}

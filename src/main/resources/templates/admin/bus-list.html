@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Danh sách xe</title>
+    <link rel="stylesheet" th:href="@{/css/admin/bus-list.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header"><h1>Quản lý xe</h1> <a th:href="@{/admin/buses/create}" class="btn-add"> + Thêm xe </a></div>
+    <div class="alert success" th:if="${success}" th:text="${success}"></div>
+    <div class="alert error" th:if="${error}" th:text="${error}"></div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Biển số</th>
+            <th>Loại xe</th>
+            <th>Số ghế</th>
+            <th>Tuyến đường</th>
+            <th>Tài xế</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bus : ${buses}">
+            <td th:text="${bus.id}"></td>
+            <td th:text="${bus.licensePlate}"></td>
+            <td th:text="${bus.busType}"></td>
+            <td th:text="${bus.totalSeats}"></td>
+            <td th:text="${bus.companyName}"></td>
+            <td th:text="${bus.driverName}"></td>
+            <td class="action-group"><a class="btn-edit" th:href="@{/admin/buses/edit/{id}(id=${bus.id})}"> Sửa </a>
+                <form th:action="@{/admin/buses/delete/{id}(id=${bus.id})}" method="post">
+                    <button type="submit" class="btn-delete" onclick="return confirm('Bạn chắc chắn muốn xóa xe này?')">
+                        Xóa
+                    </button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* HEADER */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+    background: #0f172a;
+    color: white;
+}
+
+/* Logo */
+.logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menu */
+.nav{
+    display: flex;
+    gap: 25px;
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active{
+    color: #38bdf8;
+}
+
+/* Right */
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.btn-logout{
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #ef4444;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-logout:hover{
+    background: #dc2626;
+}
+.header{
+    width:100%;
+}

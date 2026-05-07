@@ -1,0 +1,74 @@
+<div xmlns:th="http://www.thymeleaf.org">
+
+    <!-- ================= PASSENGER ================= -->
+    <div th:fragment="passengerHeader">
+        <header class="header passenger">
+
+            <div class="logo">
+                <a th:href="@{/passenger/home}">Bus Ticket Pro</a>
+            </div>
+
+            <nav class="nav">
+                <a th:href="@{/passenger/home}" class="active">Trang chủ</a>
+                <a th:href="@{/passenger/search}">Tìm chuyến</a>
+                <a th:href="@{/passenger/tickets}">Vé của tôi</a>
+                <a th:href="@{/passenger/profile}">Hồ sơ</a>
+            </nav>
+
+            <div class="right">
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit" class="btn-logout">Đăng xuất</button>
+                </form>
+            </div>
+
+        </header>
+    </div>
+
+    <!-- ================= STAFF ================= -->
+    <div th:fragment="staffHeader">
+        <header class="header staff">
+
+            <div class="logo">
+                <a th:href="@{/staff/home}">Staff Panel</a>
+            </div>
+
+            <nav class="nav">
+                <a th:href="@{/staff/home}">Trang chủ</a>
+                <a th:href="@{/staff/tickets/pending}">Vé chờ</a>
+                <a th:href="@{/staff/tickets/history}">Lịch sử</a>
+                <a th:href="@{/staff/profile}">Hồ sơ</a>
+            </nav>
+
+            <div class="right">
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit" class="btn-logout">Đăng xuất</button>
+                </form>
+            </div>
+
+        </header>
+    </div>
+
+    <!-- ================= ADMIN ================= -->
+    <div th:fragment="adminHeader">
+        <header class="header admin">
+
+            <div class="logo">
+                <a th:href="@{/admin/home}">Admin Dashboard</a>
+            </div>
+
+            <nav class="nav">
+                <a th:href="@{/admin/home}">Trang chủ</a>
+                <a th:href="@{/admin/buses}">Quản lý xe</a>
+                <a th:href="@{/admin/profile}">Hồ sơ</a>
+            </nav>
+
+            <div class="right">
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit" class="btn-logout">Đăng xuất</button>
+                </form>
+            </div>
+
+        </header>
+    </div>
+
+</div>

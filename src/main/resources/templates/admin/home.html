@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Admin Dashboard</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/admin/dashboard.css}">
+
+    <!-- Header CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/header.css}">
+</head>
+<body>
+
+<!-- ADMIN HEADER -->
+<div th:replace="~{fragments/header :: adminHeader}"></div>
+
+<div class="container">
+
+    <div class="dashboard-box">
+
+        <h1>Admin Dashboard</h1>
+
+        <p class="welcome">
+            Chào mừng bạn đến hệ thống quản lý Bus Ticket Pro
+        </p>
+
+        <!-- STATS -->
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <h3>3</h3>
+
+                <p>Tổng số xe</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>5</h3>
+
+                <p>Tuyến đường</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>3</h3>
+
+                <p>Chuyến đi</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>3</h3>
+
+                <p>Người dùng</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>7</h3>
+
+                <p>Ghế</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>3</h3>
+
+                <p>Vé đã đặt</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
