@@ -1,0 +1,31 @@
+<!doctype html>
+<div th:replace="layout :: layout(~{::content})" th:with="pageTitle='Đăng ký'">
+  <div class="card mx-auto" style="max-width:600px;">
+    <div class="card-body">
+      <h5 class="card-title">Đăng ký</h5>
+      <form th:action="@{/register}" method="post" th:object="${registerDto}">
+        <div class="mb-3">
+          <label class="form-label">Họ tên</label>
+          <input class="form-control" th:field="*{fullName}" />
+          <div class="text-danger" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input class="form-control" th:field="*{email}" />
+          <div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Số điện thoại</label>
+          <input class="form-control" th:field="*{phone}" />
+          <div class="text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mật khẩu</label>
+          <input type="password" class="form-control" th:field="*{password}" />
+          <div class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Đăng ký</button>
+      </form>
+    </div>
+  </div>
+</div>

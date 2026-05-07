@@ -1,0 +1,25 @@
+<!doctype html>
+<div th:replace="layout :: layout(~{::content})" th:with="pageTitle='Tìm chuyến'">
+  <div class="card mx-auto" style="max-width:800px;">
+    <div class="card-body">
+      <h5 class="card-title">Tìm chuyến</h5>
+      <form th:action="@{/search/results}" method="get" class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label">Điểm đi</label>
+          <select name="from" class="form-select" th:each="loc : ${locations}" th:value="${loc.id}" th:text="${loc.name}"></select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Điểm đến</label>
+          <select name="to" class="form-select" th:each="loc : ${locations}" th:value="${loc.id}" th:text="${loc.name}"></select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Ngày</label>
+          <input type="date" name="date" class="form-control" />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary">Tìm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

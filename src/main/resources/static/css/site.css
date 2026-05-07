@@ -1,0 +1,5 @@
+/* Minimal styles for seat map */
+.seat-available { background:#e9fbe9; color:#0b6623; border:1px solid #9fe69f; }
+.seat-pending { background:#fff8e1; color:#8a6d3b; border:1px solid #f0d291; }
+.seat-booked { background:#fdecea; color:#a94442; border:1px solid #f5b0b0; }
+label[disabled] { opacity:0.6; }
