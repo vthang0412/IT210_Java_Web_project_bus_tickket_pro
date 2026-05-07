@@ -1,0 +1,26 @@
+<!doctype html>
+<div th:replace="layout :: layout(~{::content})" th:with="pageTitle='Kết quả tìm kiếm'">
+  <div class="card mx-auto" style="max-width:1000px;">
+    <div class="card-body">
+      <h5 class="card-title">Kết quả chuyến</h5>
+      <div th:if="${trips != null}">
+        <table class="table">
+          <thead>
+            <tr><th>#</th><th>Tuyến</th><th>Xe</th><th>Giờ khởi hành</th><th>Giá</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr th:each="t, stat : ${trips}">
+              <td th:text="${stat.index + 1}"></td>
+              <td th:text="${t.route.from.name + ' → ' + t.route.to.name}"></td>
+              <td th:text="${t.bus.licensePlate + ' (' + t.bus.busType + ')'}"></td>
+              <td th:text="${#dates.format(t.departureTime, 'yyyy-MM-dd HH:mm')}"></td>
+              <td th:text="${t.price}"></td>
+              <td><a th:href="@{'/trip/' + ${t.id} + '/seats'}" class="btn btn-sm btn-primary">Chọn ghế</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div th:if="${trips == null}">Không tìm thấy chuyến</div>
+    </div>
+  </div>
+</div>
