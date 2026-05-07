@@ -1,0 +1,19 @@
+<!doctype html>
+<div th:replace="layout :: layout(~{::content})" th:with="pageTitle='Tìm vé'">
+  <div class="card mx-auto" style="max-width:600px;">
+    <div class="card-body">
+      <h5 class="card-title">Tra cứu vé</h5>
+      <form th:action="@{/ticket/lookup}" method="get">
+        <div class="mb-3">
+          <label class="form-label">Mã vé</label>
+          <input name="code" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Số điện thoại</label>
+          <input name="phone" class="form-control" />
+        </div>
+        <button class="btn btn-primary">Tra cứu</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<!doctype html>
+<div th:replace="layout :: layout(~{::content})" th:with="pageTitle='Lỗi'">
+  <div class="card mx-auto" style="max-width:600px;">
+    <div class="card-body">
+      <h5 class="card-title">Lỗi</h5>
+      <p th:text="${error}">Có lỗi xảy ra</p>
+    </div>
+  </div>
+</div>
